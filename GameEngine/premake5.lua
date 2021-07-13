@@ -6,8 +6,8 @@ project "GameEngine"
     targetdir("../bin/" .. outputdir .. "/%{prj.name}")
     objdir("../bin-int/" .. outputdir .. "/%{prj.name}")
 
-    pchheader "gepch.h"
-    pchsource "src/gepch.cpp"
+    pchheader(PrecompiledHeaderPrefix .. "pch.h")
+    pchsource("src/" .. PrecompiledHeaderPrefix .. "pch.cpp")
 
     files {
         "src/**.cpp",
@@ -16,11 +16,13 @@ project "GameEngine"
 
     includedirs {
         "src",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.glad}"
     }
 
     links {
         "GLFW",
+        "glad",
         "opengl32.lib"
     }
 
@@ -31,13 +33,13 @@ project "GameEngine"
         }
 
     filter {"system:windows", "configurations:Debug"}
-        defines { "GE_DEBUG" }
+        defines { (EngineMacroPrefix .. "_DEBUG") }
         buildoptions "/MTd"
         runtime "Debug"
         symbols "on"
 
     filter {"system:windows", "configurations:Release"}
-        defines { "GE_RELEASE" }
+        defines { (EngineMacroPrefix .. "_RELEASE") }
         buildoptions "/MT"
         runtime "Release"
         optimize "on"

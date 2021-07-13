@@ -5,6 +5,7 @@ namespace Engine {
 
 	class Window
 	{
+		
 	};
 
 }
