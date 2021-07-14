@@ -10,9 +10,9 @@
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="src\GameEngine.h" />
-    <ClInclude Include="src\gepch.h" />
+    <ClInclude Include="src\enginepch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\gepch.cpp" />
+    <ClCompile Include="src\enginepch.cpp" />
   </ItemGroup>
 </Project>

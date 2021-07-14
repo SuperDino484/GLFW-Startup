@@ -6,8 +6,8 @@ project (EngineName)
     targetdir("../bin/" .. outputdir .. "/%{prj.name}")
     objdir("../bin-int/" .. outputdir .. "/%{prj.name}")
 
-    pchheader(PrecompiledHeaderPrefix .. "pch.h")
-    pchsource("src/" .. PrecompiledHeaderPrefix .. "pch.cpp")
+    pchsource("src/enginepch.cpp")
+    pchheader("enginepch.h")
 
     files {
         "src/**.cpp",

@@ -14,7 +14,6 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "%{wks.location}/Dependencies/GLFW/include"
 IncludeDir["glad"] = "%{wks.location}/Dependencies/glad/include"
 
-PrecompiledHeaderPrefix = "ge"
 EngineMacroPrefix = "GE"
 EngineName = "GameEngine"
 
