@@ -1,7 +1,6 @@
 project "glad"
     kind "StaticLib"
     language "C"
-    cppdialect "C++20"
 
     targetdir("../bin/" .. outputdir .. "/%{prj.name}")
     objdir("../bin-int/" .. outputdir .. "/%{prj.name}")
@@ -18,6 +17,9 @@ project "glad"
 
     filter "system:windows"
         systemversion "latest"
+
+    filter {"system:windows", "configurations:Debug"}
+        buildoptions "/MTd"
 
     filter {"system:windows", "configurations:Release"}
         buildoptions "/MT"

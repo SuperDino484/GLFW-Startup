@@ -13,7 +13,9 @@ project "Sandbox"
     }
 
     includedirs {
-        "%{wks.location}/GameEngine/src"
+        "%{wks.location}/GameEngine/src",
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.glad}"
     }
 
     links {
