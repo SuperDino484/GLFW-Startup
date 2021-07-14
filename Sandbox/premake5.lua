@@ -13,13 +13,13 @@ project "Sandbox"
     }
 
     includedirs {
-        "%{wks.location}/GameEngine/src",
+        ("%{wks.location}/" .. EngineName .. "/src"),
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.glad}"
     }
 
     links {
-        "GameEngine"
+        (EngineName)
     }
 
     filter "system:windows"

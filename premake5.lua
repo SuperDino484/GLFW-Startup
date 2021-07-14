@@ -16,6 +16,7 @@ IncludeDir["glad"] = "%{wks.location}/Dependencies/glad/include"
 
 PrecompiledHeaderPrefix = "ge"
 EngineMacroPrefix = "GE"
+EngineName = "GameEngine"
 
 group "Dependencies"
     include "Dependencies/GLFW"
@@ -23,5 +24,5 @@ group "Dependencies"
 
 group ""
 
-include "GameEngine"
+include (EngineName)
 include "Sandbox"

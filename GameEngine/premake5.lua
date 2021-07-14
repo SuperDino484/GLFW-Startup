@@ -1,4 +1,4 @@
-project "GameEngine"
+project (EngineName)
     kind "StaticLib"
     language "C++"
     cppdialect "C++20"
@@ -29,7 +29,7 @@ project "GameEngine"
     filter "system:windows"
         systemversion "latest"
         defines {
-            "GE_WINDOWS"
+            (EngineMacroPrefix .. "_WINDOWS")
         }
 
     filter {"system:windows", "configurations:Debug"}
